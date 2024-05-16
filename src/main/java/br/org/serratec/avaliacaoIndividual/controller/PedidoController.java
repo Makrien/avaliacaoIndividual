@@ -72,7 +72,8 @@ public class PedidoController {
 	public ResponseEntity<List<PedidoDTO>> listarPorPrecoMin(@RequestBody Double precoMin) {
 		return ResponseEntity.ok(service.buscarPorPrecoMin(precoMin));
 	}
-	
+
+	@GetMapping("/preco-intervalo")
 	public ResponseEntity<List<PedidoDTO>> listarPorIntervaloPreco(@RequestBody MinMaxPrecoDTO minMaxPreco) {
 		return ResponseEntity.ok(service.buscarPorIntervaloPreco(minMaxPreco.min(), minMaxPreco.max()));
 	}
